@@ -1,3 +1,4 @@
+![bug-server](bug.jpeg)
 # 203-bug-server
 
 

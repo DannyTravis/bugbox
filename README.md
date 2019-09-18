@@ -14,9 +14,9 @@ The client side team has already built a reporting tool for the team and therefo
 
 bugs will have a title, description, reportedDate, and in some cases a closedDate.  
 
-Notes about a paticular bug can be attached to the bug by the bugId. These notes are intended to be an active record providing detailed steps towards the bugs resolution. Therefore we do not want to support deleting notes or bugs. 
+Notes about a particular bug can be attached to the bug by the bugId. These notes are intended to be an active record providing detailed steps towards the bugs resolution. Therefore we do not want to support deleting notes or bugs. 
 
-Once a bug has been closed, The bug should be uneditable and should also disable adding additional notes.
+Once a bug has been closed, The bug should be un-editable and should also disable adding additional notes.
 
 ### Rules
 The boss is a stickler for quality code and is expecting the server to be written following the MVC Standards practiced in Dotnet. Keeping this in mind you will need to have the following files for both the Bugs and their Notes.
@@ -25,7 +25,7 @@ The boss is a stickler for quality code and is expecting the server to be writte
 - Controller
 - Service
 
-Because we are not quite ready to commit to a database all of the bugs will need to be tracked with a `FakeDb Singleton Service`. You will be expected to use the Dependecy Injection Container found in `Startup.cs`
+Because we are not quite ready to commit to a database all of the bugs will need to be tracked with a `FakeDb Singleton Service`. You will be expected to use the Dependency Injection Container found in `Startup.cs`
 
 All of the business rules for this server need to be validated inside of the appropriate service and failure to pass a validation should throw Exceptions. The client has been setup to handle different status codes and may fail to pass some tests your server reply with `200 Ok` instead of the intended `400 BadRequest`
 

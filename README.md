@@ -83,3 +83,4 @@ interface IBugNote
 - Bugs and Notes are not modifiable after the bug is closed
 - Dates are set by the Server when the appropriate request is fulfilled
 - Proper File and Folder structuring is followed
+- RESTful Api Conventions are followed as described above

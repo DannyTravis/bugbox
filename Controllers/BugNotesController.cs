@@ -8,11 +8,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BugBox.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     
     public class BugNotesController : ControllerBase
     {
+        //override madness
+
 
         private readonly BugNotesService _bns;
         // GET api/values
@@ -23,11 +26,20 @@ namespace BugBox.Controllers
         }
 
         // GET api/values/5
-  /*     [HttpGet("{id}/notes")]
-        public ActionResult<string> Get(int id)
-        {
-           
-        } */
+        // [Route("/{id}/notes")]
+        // [HttpGet("{id}")]
+        // public ActionResult<List<BugNote>> Get([FromRoute] string id)
+        // {
+        //     try
+        //     {
+        //         List<BugNote> bugnotes = _bns.GetBugNotesForBug(id);
+        //         return Ok(bugnotes);
+        //     }
+        //     catch(Exception e)
+        //     {
+        //     return BadRequest(e.Message);
+        //     }
+        // } 
 
         // POST api/values
         [HttpPost]
@@ -68,4 +80,6 @@ namespace BugBox.Controllers
             _bns = bns;
         }
     }
+
+    
 }

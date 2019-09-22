@@ -39,20 +39,21 @@ namespace BugBox.Controllers
             }
         }
 
-        [HttpGet("{id}/notes")]
-        public ActionResult<IEnumerable<BugNote>> GetAction([FromRoute] string id)
-        {
-                try
-                {
-                    List<BugNote> bugnotes = _bns.GetBugNotesForBug(id);
-                    return Ok(bugnotes);
-                }
-                catch(Exception e)
-                {
-                return BadRequest(e.Message);
-                }
 
-        }
+        [HttpGet("{id}/[action]")]
+        public ActionResult<List<BugNote>> Get(string id, [FromRoute] string action)
+        {
+            try
+            {
+                List<BugNote> bugnotes = _bns.GetBugNotesForBug(id);
+                return Ok(bugnotes);
+            }
+            catch(Exception e)
+            {
+            return BadRequest(e.Message);
+            }
+        } 
+
         // POST api/values
         [HttpPost]
         public ActionResult<Bug> Post([FromBody] Bug myBug)

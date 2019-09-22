@@ -64,6 +64,17 @@ namespace BugBox.Services
       return _repo.Bugs;
     }
 
+    public List<BugNote> GetBugNotesById(string myId)
+    {
+      var myBug = GetBugByID(myId);
+      if (myBug == null)
+      {
+        throw new Exception("That ID does not exist");
+      }
+      List<BugNote> bugNotes = _repo.BugNotes.FindAll(bn => bn.BugId == myBug.Id);
+      return bugNotes;
+    }
+
     public BugsService(FakeDB repo)
     {
         _repo = repo;

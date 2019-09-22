@@ -40,12 +40,12 @@ namespace BugBox.Controllers
         }
 
 
-        [HttpGet("{id}/[action]")]
-        public ActionResult<List<BugNote>> Get(string id, [FromRoute] string action)
+        [HttpGet("{id}/notes")]
+        public ActionResult<List<BugNote>> GetNotes(string id)
         {
             try
             {
-                List<BugNote> bugnotes = _bns.GetBugNotesForBug(id);
+                List<BugNote> bugnotes = _bs.GetBugNotesById(id);
                 return Ok(bugnotes);
             }
             catch(Exception e)

@@ -20,6 +20,8 @@ namespace BugBox.Services
       myBug.Id = Guid.NewGuid().ToString();
       myBug.ReportedDate = DateTime.Now;
       myBug.LastModified = DateTime.Now;
+      DateTime? nullTime = null;
+      myBug.ClosedDate = nullTime;
       _repo.Bugs.Add(myBug);
       return myBug;
     }

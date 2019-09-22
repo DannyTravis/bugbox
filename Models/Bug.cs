@@ -11,7 +11,7 @@ namespace BugBox.Models
     public string Description { get; set; }
     public DateTime ReportedDate { get; set; }
     public DateTime LastModified { get; set; }
-    public DateTime ClosedDate { get; set; }
+    public DateTime? ClosedDate { get; set; }
 
   }
 

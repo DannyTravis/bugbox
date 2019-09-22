@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BugBox.Models;
+using BugBox.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BugBox.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class BugNotesController : ControllerBase
     {
+
+        private readonly BugNotesService _bns;
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<BugNote>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _bns.GetBugNotes();
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+  /*     [HttpGet("{id}/notes")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
-        }
+           
+        } */
 
         // POST api/values
         [HttpPost]

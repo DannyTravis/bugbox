@@ -64,7 +64,9 @@ namespace BugBox.Services
 
     public BugsService(FakeDB repo)
     {
-      _repo = repo;
+        _repo = repo;
     }
+  
   }
+
 }

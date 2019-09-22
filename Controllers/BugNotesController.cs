@@ -62,5 +62,10 @@ namespace BugBox.Controllers
         public void Delete(int id)
         {
         }
+
+        public BugNotesController(BugNotesService bns)
+        {
+            _bns = bns;
+        }
     }
 }

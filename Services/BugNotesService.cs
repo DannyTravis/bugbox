@@ -56,7 +56,6 @@ namespace BugBox.Services
       {
         throw new Exception("You can not add to a clossed bug");
       }
-
       myBugNote.Body = bugNoteData.Body;
       myBugNote.Timestamp = DateTime.Now;
       return myBugNote;

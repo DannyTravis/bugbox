@@ -28,13 +28,15 @@ namespace BugBox.Services
 
     public Bug EditBug(Bug bugData)
     {
-      if(bugData.ClosedDate != null)
+      var myBug = GetBugByID(bugData.Id);
+      if(myBug.ClosedDate != null)
       {
         throw new Exception("You Can't Modify a Closed Bug, Create a New Bug and Try Again");
       }
-      var myBug = GetBugByID(bugData.Id);
       myBug.Title = bugData.Title;
       myBug.Description = bugData.Description;
+      DateTime? nullTime = null;
+      myBug.ClosedDate = nullTime;
       myBug.LastModified = DateTime.Now;
       return myBug;
     }

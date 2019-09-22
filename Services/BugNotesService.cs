@@ -75,7 +75,11 @@ namespace BugBox.Services
       }
       return myBugNoteList;
     }
-      
+    
+    public BugNotesService(FakeDB repo)
+    {
+      _repo = repo;
+    }
 
     }
 }

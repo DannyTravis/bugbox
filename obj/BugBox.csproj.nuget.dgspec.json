@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\source\\codeworks2\\BugBox\\BugBox.csproj": {}
+    "C:\\source\\codeworks2\\BugBox\\BugBox.csproj": {}
   },
   "projects": {
-    "c:\\source\\codeworks2\\BugBox\\BugBox.csproj": {
+    "C:\\source\\codeworks2\\BugBox\\BugBox.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\source\\codeworks2\\BugBox\\BugBox.csproj",
+        "projectUniqueName": "C:\\source\\codeworks2\\BugBox\\BugBox.csproj",
         "projectName": "BugBox",
-        "projectPath": "c:\\source\\codeworks2\\BugBox\\BugBox.csproj",
+        "projectPath": "C:\\source\\codeworks2\\BugBox\\BugBox.csproj",
         "packagesPath": "C:\\Users\\2501\\.nuget\\packages\\",
-        "outputPath": "c:\\source\\codeworks2\\BugBox\\obj\\",
+        "outputPath": "C:\\source\\codeworks2\\BugBox\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

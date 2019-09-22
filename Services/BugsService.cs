@@ -57,8 +57,12 @@ namespace BugBox.Services
 
     public List<Bug> GetBugs()
     {
-      return _repo.Bugs;  
+      return _repo.Bugs;
     }
 
+    public BugsService(FakeDB repo)
+    {
+      _repo = repo;
+    }
   }
 }

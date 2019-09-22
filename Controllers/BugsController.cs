@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BugBox.Controllers
 {
+    
+    
     [Route("api/[controller]")]
     [ApiController]
     public class BugsController : ControllerBase
@@ -22,8 +24,7 @@ namespace BugBox.Controllers
         }
 
         // GET api/bugs/5
-        [HttpGet("{id}")]
-        
+        [HttpGet("{id}")]      
         public ActionResult<Bug> Get(string id)
         {
             try
@@ -36,11 +37,11 @@ namespace BugBox.Controllers
             return BadRequest(e.Message);
             }
         }
-
-        [HttpGet("{id}"+"{cmd}")]
+        
+        [HttpGet("{id}/{cmd}")]
         public ActionResult<IEnumerable<BugNote>> Get(string id, string cmd)
         {
-            if (cmd == "/notes"){
+            if (cmd == "notes"){
                 try
                 {
                     List<BugNote> bugnotes = _bsn.GetBugNotesForBug(id);
@@ -52,9 +53,10 @@ namespace BugBox.Controllers
                 }
             }
             else{
-                return new NotFoundObjectResult("I cant let you do that");
+                return BadRequest("Not a valid command");
             }
         }
+
         // POST api/values
         [HttpPost]
         public ActionResult<Bug> Post([FromBody] Bug myBug)
@@ -82,6 +84,7 @@ namespace BugBox.Controllers
             }
             catch (Exception e) { return BadRequest(e.Message); }
         }
+
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
